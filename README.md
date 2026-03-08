@@ -4,7 +4,9 @@ A personal portfolio website built with React and Tailwind CSS, inspired by the 
 
 ## 🌐 Live Website
 
-Visit: [Your deployed URL will be here]
+Visit: [https://meinianda-l.github.io/liyuanda/](https://meinianda-l.github.io/liyuanda/)
+
+*Note: GitHub Pages will be automatically deployed when you push to the main branch.*
 
 ## 📁 Project Structure
 
