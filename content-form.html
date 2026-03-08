@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Form - Yuanda Li</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#faf6f0] text-gray-900">
+  <main class="max-w-3xl mx-auto px-6 py-14">
+    <a href="/" class="text-sm text-gray-600 hover:text-gray-900">← Back to Home</a>
+    <h1 class="text-4xl mt-4 mb-2">Content Form</h1>
+    <p class="text-gray-600 mb-8">Create one project/blog entry at a time. Then paste the generated snippet into your data file and create the HTML file in <code>public/projects/</code> or <code>public/blogs/</code>.</p>
+
+    <form id="content-form" class="bg-white rounded-2xl p-6 shadow-sm space-y-4">
+      <div>
+        <label class="block text-sm mb-1">Type</label>
+        <select id="type" class="w-full border border-gray-300 rounded-lg px-3 py-2">
+          <option value="project">Project</option>
+          <option value="blog">Blog</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm mb-1">Title</label>
+        <input id="title" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="My New Project" required>
+      </div>
+      <div>
+        <label class="block text-sm mb-1">Slug (file name, no .html)</label>
+        <input id="slug" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="my-new-project" required>
+      </div>
+      <div>
+        <label class="block text-sm mb-1">Cover Image (e.g. images/fun1.jpg)</label>
+        <input id="image" class="w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="images/fun1.jpg" required>
+      </div>
+      <div class="flex items-center gap-2">
+        <input id="preview" type="checkbox" class="w-4 h-4" checked>
+        <label for="preview" class="text-sm">Include this title in homepage preview selection</label>
+      </div>
+      <button class="px-4 py-2 bg-[#c9a88c] text-white rounded-lg" type="submit">Generate</button>
+    </form>
+
+    <section id="output" class="mt-8 hidden space-y-4">
+      <div class="bg-white rounded-2xl p-6 shadow-sm">
+        <h2 class="text-xl mb-2">1) Create HTML file</h2>
+        <pre id="file-path" class="text-sm bg-gray-100 p-3 rounded-lg overflow-auto"></pre>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm">
+        <h2 class="text-xl mb-2">2) Paste into data file</h2>
+        <pre id="data-snippet" class="text-sm bg-gray-100 p-3 rounded-lg overflow-auto"></pre>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm">
+        <h2 class="text-xl mb-2">3) (Optional) Add this title in homepage preview</h2>
+        <pre id="preview-snippet" class="text-sm bg-gray-100 p-3 rounded-lg overflow-auto"></pre>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('content-form');
+    const output = document.getElementById('output');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const type = document.getElementById('type').value;
+      const title = document.getElementById('title').value.trim();
+      const slug = document.getElementById('slug').value.trim();
+      const image = document.getElementById('image').value.trim();
+      const preview = document.getElementById('preview').checked;
+
+      const htmlFile = type === 'project' ? `/projects/${slug}.html` : `/blogs/${slug}.html`;
+      const dataEntry = `{
+  id: Date.now(),
+  title: '${title}',
+  image: '${image}',
+  htmlFile: '${htmlFile}',
+  published: true
+}`;
+
+      const previewEntry = preview
+        ? (type === 'project' ? `Add '${title}' to homepageConfig.preview.projects in public/data/homepage.js` : `Add '${title}' to homepageConfig.preview.blogs in public/data/homepage.js`)
+        : 'Skip homepage preview selection.';
+
+      document.getElementById('file-path').textContent = `public${htmlFile}`;
+      document.getElementById('data-snippet').textContent = dataEntry;
+      document.getElementById('preview-snippet').textContent = previewEntry;
+      output.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Yuanda Li</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .text-primary { color: #c9a88c; }
+    .bg-primary { background-color: #c9a88c; }
+    .hover\:bg-primary:hover { background-color: #c9a88c; }
+  </style>
+</head>
+<body class="bg-[#faf6f0]">
+  <!-- Navigation -->
+  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+    <div class="flex items-center gap-1 px-5 py-2.5 bg-white/90 backdrop-blur-xl rounded-full shadow-[0_2px_20px_rgba(0,0,0,0.08)] border border-white/30">
+      <a href="/" class="text-lg font-medium tracking-tight text-gray-900 px-3">YD</a>
+      <div class="w-px h-4 bg-gray-200 mx-1"></div>
+      <div class="hidden md:flex items-center gap-1">
+        <a href="/#about" class="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100/50 px-3 py-1.5 rounded-full transition-all">About</a>
+        <a href="/projects.html" class="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100/50 px-3 py-1.5 rounded-full transition-all">Projects</a>
+        <a href="/blog.html" class="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100/50 px-3 py-1.5 rounded-full transition-all">Blog</a>
+        <a href="/#contact" class="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100/50 px-3 py-1.5 rounded-full transition-all">Contact</a>
+      </div>
+      <div class="w-px h-4 bg-gray-200 mx-1 hidden md:block"></div>
+      <a href="mailto:lydbest@outlook.com" class="hidden md:flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 px-3 py-1.5 rounded-full hover:bg-gray-100/50 transition-all">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+        <span>Email</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="pt-32 pb-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <a href="/" class="inline-flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors mb-8">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        Back to Home
+      </a>
+      <h1 class="text-5xl md:text-6xl font-normal text-gray-900 font-serif italic">About Yuanda Li</h1>
+    </div>
+  </header>
+
+
+  <section class="py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-normal text-gray-900 mb-12 font-serif">My Journey</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Robotics -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="images/vex_robots.jpg" alt="Robotics" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-medium text-gray-900 mb-3">Robotics Passion</h3>
+            <p class="text-gray-600 leading-relaxed">Since Grade 4, I have dedicated over 7-8 hours weekly to VEX robotics. I have won multiple national competitions and developed strong skills in mechanical design and programming. I self-taught advanced mathematics to overcome programming challenges and developed efficient control systems.</p>
+          </div>
+        </div>
+
+        <!-- Music -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="images/marching_band_landscape_v4.jpg" alt="Music" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-medium text-gray-900 mb-3">Musical Excellence</h3>
+            <p class="text-gray-600 leading-relaxed">I joined the Fuxue Hutong Primary School Golden Sail Marching Band in Grade 4, rising from an ordinary member to principal clarinetist. I have passed the Level 10 certification from the China Conservatory of Music.</p>
+          </div>
+        </div>
+
+        <!-- Sports -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="images/cycling_ultimate.jpg" alt="Sports" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-medium text-gray-900 mb-3">Athletic Pursuits</h3>
+            <p class="text-gray-600 leading-relaxed">For four years, I have maintained consistent training in squash and badminton. Badminton has improved my reaction speed and teamwork, while squash has strengthened my instant judgment and stress resistance.</p>
+          </div>
+        </div>
+
+        <!-- Academic -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="images/vex_competition_you_centered.jpg" alt="Academic" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-medium text-gray-900 mb-3">Academic Exploration</h3>
+            <p class="text-gray-600 leading-relaxed"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Honors & Awards Section - Timeline -->
+  <section class="py-16 px-6 bg-[#f5f0e8]">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-3 mb-12">
+        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+        <h2 class="text-4xl md:text-5xl font-normal text-gray-900 font-serif">Honors & Awards</h2>
+      </div>
+
+      <!-- Timeline -->
+      <div class="relative">
+        <!-- Timeline Line -->
+        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/30 md:-translate-x-1/2"></div>
+
+        <!-- 2025 Awards -->
+        <div class="relative mb-8">
+          <!-- Year Marker -->
+          <div class="absolute left-4 md:left-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold md:-translate-x-1/2 z-10">25</div>
+          
+          <div class="ml-16 md:ml-0 md:mr-[calc(50%+2rem)] md:text-right">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-medium text-white bg-primary mb-2">2025</span>
+            
+            <div class="bg-white rounded-xl p-5 shadow-sm mb-4">
+              <h3 class="text-lg font-medium text-gray-900 mb-1">VEX Robotics Elite Invitational Champion</h3>
+              <p class="text-gray-600 text-sm">"Nangong Cup" v5rc Junior High Champion</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-5 shadow-sm mb-4">
+              <h3 class="text-lg font-medium text-gray-900 mb-1">VEX Asia Open Best Software Award</h3>
+              <p class="text-gray-600 text-sm">International Signature Event</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-5 shadow-sm">
+              <h3 class="text-lg font-medium text-gray-900 mb-1">World Scholar's Cup Awards</h3>
+              <p class="text-gray-600 text-sm">Team Debate Silver, Team Challenge Gold</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2024 Awards -->
+        <div class="relative mb-8">
+          <div class="absolute left-4 md:left-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold md:-translate-x-1/2 z-10">24</div>
+          
+          <div class="ml-16 md:ml-[calc(50%+2rem)]">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-medium text-white bg-primary mb-2">2024</span>
+            
+            <div class="bg-white rounded-xl p-5 shadow-sm mb-4">
+              <h3 class="text-lg font-medium text-gray-900 mb-1">Clarinet Level 10 Certification</h3>
+              <p class="text-gray-600 text-sm">China Conservatory of Music</p>
+            </div>
+            
+            <div class="bg-white rounded-xl p-5 shadow-sm">
+              <h3 class="text-lg font-medium text-gray-900 mb-1">British Biology Challenge Global Bronze</h3>
+              <p class="text-gray-600 text-sm">British Biology Olympiad Committee</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2023 Awards -->
+        <div class="relative">
+          <div class="absolute left-4 md:left-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold md:-translate-x-1/2 z-10">23</div>
+          
+          <div class="ml-16 md:ml-0 md:mr-[calc(50%+2rem)] md:text-right">
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-medium text-white bg-primary mb-2">2023</span>
+            
+            <div class="bg-white rounded-xl p-5 shadow-sm">
+              <h3 class="text-lg font-medium text-gray-900 mb-1">VEX Asia Open Finals 3rd Place</h3>
+              <p class="text-gray-600 text-sm">2022-2023 Season</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div>
+          <a href="/" class="inline-block text-3xl font-medium mb-4">YD</a>
+          <p class="text-gray-400 text-sm leading-relaxed">Yuanda Li - A Grade 8 student passionate about technology, arts, and sports.</p>
+        </div>
+        <div>
+          <h3 class="text-xs font-medium uppercase tracking-[0.15em] text-gray-500 mb-5">Navigation</h3>
+          <ul class="space-y-3">
+            <li><a href="/" class="text-gray-300 hover:text-white transition-colors text-sm">Home</a></li>
+            <li><a href="/about-detail.html" class="text-gray-300 hover:text-white transition-colors text-sm">About</a></li>
+            <li><a href="/projects.html" class="text-gray-300 hover:text-white transition-colors text-sm">Projects</a></li>
+            <li><a href="/blog.html" class="text-gray-300 hover:text-white transition-colors text-sm">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs font-medium uppercase tracking-[0.15em] text-gray-500 mb-5">Contact</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="mailto:lydbest@outlook.com" class="text-gray-300 hover:text-white transition-colors text-sm inline-flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                lydbest@outlook.com
+              </a>
+            </li>
+            <li>
+              <span class="text-gray-300 text-sm inline-flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                WeChat: Meinianda_Li
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/10 text-center">
+        <p class="text-gray-500 text-sm">© 2026 Yuanda Li. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
