@@ -34,7 +34,7 @@ const Footer = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
           >
-            <a href="/" className="inline-block text-3xl font-medium mb-4">
+            <a href="/liyuanda/" className="inline-block text-3xl font-medium mb-4">
               {personal.logo}
             </a>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -54,22 +54,22 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <a href="/" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="/liyuanda/" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Home
                 </a>
               </li>
               <li>
-                <a href="/about-detail.html" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="/liyuanda/about-detail.html" className="text-gray-300 hover:text-white transition-colors text-sm">
                   About
                 </a>
               </li>
               <li>
-                <a href="/projects.html" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="/liyuanda/projects.html" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Projects
                 </a>
               </li>
               <li>
-                <a href="/blog.html" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="/liyuanda/blog.html" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Blog
                 </a>
               </li>

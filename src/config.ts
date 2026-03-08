@@ -7,6 +7,16 @@ import blogConfig from './data/blogs.js';
 // Edit this file to customize your website
 // ============================================
 
+const GITHUB_PAGES_BASE = '/liyuanda';
+
+const withBase = (path: string) => {
+  if (path.startsWith('/')) {
+    return `${GITHUB_PAGES_BASE}${path}`;
+  }
+
+  return `${GITHUB_PAGES_BASE}/${path}`;
+};
+
 const pickByTitles = (items: Array<{ title: string }>, titles: string[]) => {
   if (!titles.length) return items;
 
@@ -15,8 +25,8 @@ const pickByTitles = (items: Array<{ title: string }>, titles: string[]) => {
 };
 
 const normalizeLink = (path: string | undefined, fallback: string) => {
-  if (!path) return fallback;
-  return path.startsWith('/') ? path : `/${path}`;
+  if (!path) return withBase(fallback);
+  return withBase(path);
 };
 
 const publishedProjects = (projectConfig.projects ?? []).filter((item: { published?: boolean }) => item.published);
@@ -33,7 +43,7 @@ const projectPreviewItems = pickByTitles(publishedProjects, selectedProjectTitle
   title: item.title,
   description: '',
   image: item.image || 'images/fun1.jpg',
-  link: normalizeLink(item.htmlFile, '/projects.html'),
+  link: normalizeLink(item.htmlFile, 'projects.html'),
 }));
 
 const blogPreviewItems = pickByTitles(publishedBlogs, selectedBlogTitles).slice(0, 4).map((item: {
@@ -44,7 +54,7 @@ const blogPreviewItems = pickByTitles(publishedBlogs, selectedBlogTitles).slice(
   title: item.title,
   description: '',
   image: item.image || 'images/fun1.jpg',
-  link: normalizeLink(item.htmlFile, '/blog.html'),
+  link: normalizeLink(item.htmlFile, 'blog.html'),
 }));
 
 export const config = {
@@ -68,10 +78,10 @@ export const config = {
   // ============================================
   navigation: {
     links: [
-      { label: 'About', href: '#about' },
-      { label: 'Projects', href: '/projects.html' },
-      { label: 'Blog', href: '/blog.html' },
-      { label: 'Contact', href: '#contact' },
+      { label: 'About', href: withBase('/#about') },
+      { label: 'Projects', href: withBase('/projects.html') },
+      { label: 'Blog', href: withBase('/blog.html') },
+      { label: 'Contact', href: withBase('/#contact') },
     ],
   },
 
@@ -104,7 +114,7 @@ export const config = {
     shortDescription: 'I am Yuanda Li, a Grade 8 student passionate about robotics, music, sports and continuous learning.',
     ctaButton: {
       text: 'Learn More',
-      href: '/about-detail.html',
+      href: withBase('/about-detail.html'),
     },
     // Images that cycle on scroll (fixed position until last image)
     images: homepageConfig.aboutImages,
@@ -205,7 +215,7 @@ export const config = {
       title: 'Projects',
       subtitle: 'Innovations. Creations. Explorations.',
       viewAllText: 'View All Projects',
-      viewAllLink: '/projects.html',
+      viewAllLink: withBase('/projects.html'),
       items: projectPreviewItems,
     },
     blog: {
@@ -213,7 +223,7 @@ export const config = {
       title: 'Blog',
       subtitle: 'Thoughts. Insights. Stories.',
       viewAllText: 'Read All Posts',
-      viewAllLink: '/blog.html',
+      viewAllLink: withBase('/blog.html'),
       items: blogPreviewItems,
     },
   },

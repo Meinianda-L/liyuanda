@@ -28,7 +28,7 @@ const Navigation = () => {
       >
         <div className="flex items-center gap-1 px-5 py-2.5 bg-white/90 backdrop-blur-xl rounded-full shadow-[0_2px_20px_rgba(0,0,0,0.08)] border border-white/30">
           {/* Logo */}
-          <a href="/" className="text-lg font-medium tracking-tight text-gray-900 px-3">
+          <a href="/liyuanda/" className="text-lg font-medium tracking-tight text-gray-900 px-3">
             {personal.logo}
           </a>
 
@@ -110,7 +110,7 @@ const Navigation = () => {
       >
         <div className="flex items-center gap-1 px-5 py-2.5 bg-white/20 backdrop-blur-md rounded-full border border-white/20">
           {/* Logo */}
-          <a href="/" className="text-lg font-medium tracking-tight text-gray-900 px-3">
+          <a href="/liyuanda/" className="text-lg font-medium tracking-tight text-gray-900 px-3">
             {personal.logo}
           </a>
 
