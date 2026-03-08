@@ -72,7 +72,7 @@ export const homepageConfig = {
     description: 'I am Yuanda Li, a Grade 8 student passionate about robotics, music, and continuous learning. I have spent four years in VEX robotics and hold a Level 10 certification in clarinet.',
     ctaButton: {
       text: 'Learn More',
-      link: '/about-detail.html'
+      link: '/liyuanda/about-detail.html'
     }
   },
 
