@@ -49,18 +49,20 @@ const Quote = () => {
           >
             "{quote.text}"
           </p>
-          <footer
-            className={`transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-          >
-            <cite 
-              className="text-base text-gray-500 not-italic"
-              style={{ fontFamily: theme.fontFamily.heading, fontStyle: 'italic' }}
+          {quote.author && (
+            <footer
+              className={`transition-all duration-1000 delay-300 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
             >
-              — {quote.author}
-            </cite>
-          </footer>
+              <cite
+                className="text-base text-gray-500 not-italic"
+                style={{ fontFamily: theme.fontFamily.heading, fontStyle: 'italic' }}
+              >
+                — {quote.author}
+              </cite>
+            </footer>
+          )}
         </blockquote>
       </div>
     </section>
