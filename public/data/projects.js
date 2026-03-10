@@ -6,6 +6,16 @@
 
 export const projectConfig = {
   projects: [
+    {
+      id: 1,
+      title: 'FileAtlas: Local File Intelligence',
+      description: 'A local-first file indexer and search engine that helps people find files by intent, not only by exact filename.',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=500&fit=crop',
+      category: 'Software',
+      year: '2026',
+      htmlFile: 'project-fileatlas.html',
+      published: true
+    }
     // {
     //   id: 1,
     //   title: 'VEX Robot Control System',

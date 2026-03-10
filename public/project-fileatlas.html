@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FileAtlas: Local File Intelligence - Yuanda Li</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+    .text-primary { color: #c9a88c; }
+    .bg-primary { background-color: #c9a88c; }
+    .formula-panel {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      background: #ffffff;
+      padding: 0.9rem 1rem;
+    }
+    .formula-title {
+      color: #374151;
+      font-size: 0.86rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.01em;
+    }
+    mjx-container[display="true"] {
+      margin: 0.4rem 0 !important;
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="bg-[#f5f0e8]" contenteditable="true">
+  <!-- Navigation -->
+  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+    <div class="flex items-center gap-1 px-5 py-2.5 bg-white/90 backdrop-blur-xl rounded-full shadow-[0_2px_20px_rgba(0,0,0,0.08)] border border-white/30">
+      <a href="/liyuanda/" class="text-lg font-medium tracking-tight text-gray-900 px-3">YD</a>
+      <div class="w-px h-4 bg-gray-200 mx-1"></div>
+      <div class="hidden md:flex items-center gap-1">
+        <a href="/liyuanda/#about" class="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100/50 px-3 py-1.5 rounded-full transition-all">About</a>
+        <a href="/liyuanda/projects.html" class="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100/50 px-3 py-1.5 rounded-full transition-all">Projects</a>
+        <a href="/liyuanda/blog.html" class="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100/50 px-3 py-1.5 rounded-full transition-all">Blog</a>
+        <a href="/liyuanda/#contact" class="text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100/50 px-3 py-1.5 rounded-full transition-all">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Project Header -->
+  <header class="pt-32 pb-12 px-6">
+    <div class="max-w-4xl mx-auto">
+      <a href="/liyuanda/projects.html" class="inline-flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors mb-6">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        Back to Projects
+      </a>
+
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-medium text-white bg-primary">Software</span>
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-medium text-gray-600 bg-gray-200">2026</span>
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-medium text-amber-700 bg-amber-100">Prototype</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-normal text-gray-900 font-serif italic leading-tight mb-6">
+        FileAtlas: Local File Intelligence
+      </h1>
+
+      <p class="text-xl text-gray-600 leading-relaxed max-w-3xl">
+        A practical local-first tool that scans, indexes, and ranks personal files so users can retrieve what they need quickly through CLI or API.
+      </p>
+      <p class="mt-4 inline-block px-4 py-2 rounded-full bg-amber-100 text-amber-800 text-sm font-medium">
+        Written in Python by Kevin, translated into Go by AI.
+      </p>
+    </div>
+  </header>
+
+  <!-- Project Content -->
+  <section class="max-w-4xl mx-auto px-6 pb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <!-- Main Content -->
+      <div class="lg:col-span-2">
+        <h2 class="text-2xl font-medium text-gray-900 mb-4 font-serif italic">Overview</h2>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          FileAtlas is a local search system written in Go with two interfaces: CLI and HTTP API. It scans selected roots, stores normalized file records, builds an inverted index (<code>token -&gt; file IDs</code>), and ranks candidates by weighted relevance. The design goal is fast retrieval from context words, not exact filename memory.
+        </p>
+        <p class="text-sm text-gray-600 italic mb-8">
+          Project origin: this project was originally written in Python by Kevin and translated into Go with AI assistance.
+        </p>
+
+        <h2 class="text-2xl font-medium text-gray-900 mt-10 mb-4 font-serif italic">Why This Is Useful</h2>
+        <div class="space-y-6 mb-10">
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-medium text-gray-900 mb-1">Faster daily search</h3>
+              <p class="text-gray-600 text-sm">Users can search with phrases like "math worksheet draft" and still find files when the exact filename is forgotten.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-medium text-gray-900 mb-1">Privacy-first local model</h3>
+              <p class="text-gray-600 text-sm">Everything runs on-device. Content indexing is disabled by default and must be explicitly enabled.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+              <h3 class="font-medium text-gray-900 mb-1">Agent integration ready</h3>
+              <p class="text-gray-600 text-sm">Local endpoints (<code>/v1/find</code>, <code>/v1/scan</code>, <code>/v1/register-created</code>) support linked tools and agents.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-medium text-gray-900 mt-10 mb-4 font-serif italic">Core Workflow (Ordered Spec)</h2>
+        <ol class="list-decimal pl-6 space-y-2 text-gray-700 mb-6">
+          <li>Initialize configuration with <code>fileatlas init</code> (roots, ignore list, content-read mode, provider metadata).</li>
+          <li>Scan roots with <code>fileatlas scan</code>; directory walker skips ignored folders and non-regular files.</li>
+          <li>Reuse unchanged files by matching <code>(size, mod_time)</code>; only changed files are re-tokenized.</li>
+          <li>Persist records to <code>~/.fileatlas/files.json</code> and rebuild postings map in <code>~/.fileatlas/inverted.json</code>.</li>
+          <li>Run <code>fileatlas find \"query\"</code>; query tokens pull candidates from inverted index, then scoring/ranking executes.</li>
+          <li>Expose same behavior to external tools through <code>fileatlas serve</code> and local HTTP endpoints.</li>
+          <li>Whenever an agent writes a file, call <code>register-created</code> so it becomes searchable immediately.</li>
+        </ol>
+
+        <h3 class="text-xl font-medium text-gray-900 mt-8 mb-3 font-serif italic">Concrete Command Sequence</h3>
+        <div class="bg-gray-900 rounded-xl p-6 mb-8 overflow-x-auto">
+          <pre class="text-sm text-gray-300 font-mono"><code>fileatlas init
+fileatlas scan --roots ~/Documents,~/Desktop
+fileatlas find "meeting notes draft"
+fileatlas serve --addr 127.0.0.1:4819
+fileatlas register-created --path /tmp/new-note.md --agent openclaw --share full</code></pre>
+        </div>
+
+        <h2 class="text-2xl font-medium text-gray-900 mt-10 mb-4 font-serif italic">Algorithm Details (LaTeX)</h2>
+        <p class="text-gray-700 mb-5">Readable math version of the exact ranking pipeline used by FileAtlas:</p>
+
+        <div class="space-y-4 mb-8">
+          <div class="formula-panel">
+            <div class="formula-title">1) Candidate retrieval from inverted index</div>
+            \[
+            \mathcal{C}(q)=\bigcup_{\tau \in \mathcal{T}(q)} I(\tau)
+            \]
+          </div>
+
+          <div class="formula-panel">
+            <div class="formula-title">2) Token match component</div>
+            \[
+            T(d,q)=\sum_{\tau \in \mathcal{T}(q)} \mathrm{tf}(\tau,d)
+            \]
+          </div>
+
+          <div class="formula-panel">
+            <div class="formula-title">3) Recency decay component</div>
+            \[
+            R(d)=e^{-\mathrm{ageDays}(d)/45}, \qquad
+            \mathrm{ageDays}(d)=\frac{t_{\mathrm{now}}-t_{\mathrm{mod}}(d)}{86400}
+            \]
+          </div>
+
+          <div class="formula-panel">
+            <div class="formula-title">4) Final weighted ranking score</div>
+            \[
+            \mathrm{Score}(d,q)=0.45\,T(d,q)+0.30\,R(d)+0.15\,P(d)+0.10\,L(d,q)
+            \]
+          </div>
+
+          <div class="formula-panel">
+            <div class="formula-title">5) Incremental scan reuse rule</div>
+            \[
+            \mathrm{Reuse}(d)=
+            \big[\mathrm{size}(d)=\mathrm{size}_{\mathrm{old}}(d)\big]
+            \land
+            \big[t_{\mathrm{mod}}(d)=t_{\mathrm{mod,old}}(d)\big]
+            \]
+          </div>
+        </div>
+
+        <ol class="list-decimal pl-6 space-y-3 text-gray-700 mb-8">
+          <li><span class="font-semibold text-gray-900">Tokenize query and files:</span> regex extraction plus stop-word filtering.</li>
+          <li><span class="font-semibold text-gray-900">Fetch candidates quickly:</span> union of postings lists from the inverted index.</li>
+          <li><span class="font-semibold text-gray-900">Compute weighted score:</span> token match, recency, path boost, and label boost.</li>
+          <li><span class="font-semibold text-gray-900">Sort results:</span> descending by score, then newer modified time for tie-breaks.</li>
+          <li><span class="font-semibold text-gray-900">Return top N:</span> path, score, labels, snippet (if available), and why-matched explanation.</li>
+        </ol>
+
+        <h3 class="text-xl font-medium text-gray-900 mt-8 mb-3 font-serif italic">Search Execution Order</h3>
+        <ol class="list-decimal pl-6 space-y-2 text-gray-700 mb-8">
+          <li>Normalize and tokenize query text with the same tokenizer used in indexing.</li>
+          <li>Get candidate IDs from token postings in the inverted index.</li>
+          <li>For each candidate, compute token frequency component and weighted boosts.</li>
+          <li>Apply tie-breaker by newer <code>mod_time</code> when final scores are equal.</li>
+          <li>Return top N results with path, score, labels, snippet (if available), and match explanation.</li>
+        </ol>
+
+        <h2 class="text-2xl font-medium text-gray-900 mt-10 mb-4 font-serif italic">Data Files and API Contract</h2>
+        <div class="space-y-3 text-gray-700 mb-8">
+          <p><span class="font-semibold text-gray-900">Data directory:</span> <code>~/.fileatlas</code></p>
+          <ol class="list-decimal pl-6 space-y-1 text-sm">
+            <li><code>config.json</code> - runtime settings and scan roots</li>
+            <li><code>files.json</code> - indexed file records</li>
+            <li><code>inverted.json</code> - token-to-file postings map</li>
+            <li><code>agent_created.jsonl</code> - append-only log of agent-created files</li>
+          </ol>
+          <p class="text-sm mt-3"><span class="font-semibold text-gray-900">API endpoints:</span> <code>GET /v1/health</code>, <code>GET /v1/status</code>, <code>POST /v1/find</code>, <code>POST /v1/scan</code>, <code>POST /v1/register-created</code></p>
+        </div>
+
+        <h2 class="text-2xl font-medium text-gray-900 mt-10 mb-4 font-serif italic">Prototype Notes (Editable)</h2>
+        <p class="text-gray-700 leading-relaxed mb-6">
+          This project page is intentionally written as a prototype draft so content can be tuned later for competition submissions, portfolio audience, or GitHub visitors.
+        </p>
+
+        <blockquote class="border-l-4 border-primary pl-6 py-2 my-8 bg-white/50 rounded-r-lg">
+          <p class="text-lg text-gray-800 italic font-serif">
+            "Make it work, make it right, make it fast."
+          </p>
+          <p class="text-sm text-gray-500 mt-2">- Kent Beck</p>
+        </blockquote>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:col-span-1">
+        <div class="bg-white rounded-2xl p-6 shadow-sm sticky top-32">
+          <h3 class="text-sm font-medium uppercase tracking-wider text-gray-500 mb-4">Project Info</h3>
+
+          <div class="space-y-4">
+            <div>
+              <p class="text-xs text-gray-400 mb-1">Year</p>
+              <p class="text-gray-900 font-medium">2026</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 mb-1">Category</p>
+              <p class="text-gray-900 font-medium">Software / Productivity</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 mb-1">Language</p>
+              <p class="text-gray-900 font-medium">Go</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 mb-1">Interfaces</p>
+              <p class="text-gray-900 font-medium">CLI + HTTP API</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 mb-1">Status</p>
+              <p class="text-gray-900 font-medium">Active Prototype</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 mb-1">Privacy Default</p>
+              <p class="text-gray-900 font-medium">Content Read OFF</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 mb-1">Parallelism</p>
+              <p class="text-gray-900 font-medium">Worker pool = CPU cores</p>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-gray-100">
+            <h3 class="text-sm font-medium uppercase tracking-wider text-gray-500 mb-4">Technologies</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">Go</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">Inverted Index</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">Ranking</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">Local API</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">Incremental Scan</span>
+              <span class="px-3 py-1 bg-gray-100 rounded-full text-xs text-gray-700">JSON Storage</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-gray-100">
+            <a href="https://github.com/Meinianda-L/fileatlas" target="_blank" rel="noopener noreferrer" class="inline-flex w-full items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-gray-900 text-white text-sm hover:bg-black transition-colors">
+              View Repository
+            </a>
+            <a href="/liyuanda/fileatlas-tutorial.html" class="inline-flex w-full items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-white border border-gray-300 text-gray-800 text-sm hover:bg-gray-50 transition-colors mt-3">
+              Open Tutorial
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Request Lifecycle Diagram -->
+  <section class="max-w-5xl mx-auto px-6 pb-24">
+    <div class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+      <h2 class="text-2xl font-medium text-gray-900 font-serif italic mb-3">Request Lifecycle Diagram</h2>
+      <p class="text-gray-600 mb-6">
+        Bottom summary: how FileAtlas handles scan requests and search requests.
+      </p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="rounded-xl border border-gray-200 p-5 bg-[#faf7f2]">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-4">Scan Pipeline</h3>
+          <div class="space-y-3 text-sm text-gray-700">
+            <div class="bg-white rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold">1.</span> Read scan roots from config or request</div>
+            <div class="text-center text-gray-400">-></div>
+            <div class="bg-white rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold">2.</span> Walk folders and skip ignored directories</div>
+            <div class="text-center text-gray-400">-></div>
+            <div class="bg-white rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold">3.</span> Reuse unchanged files by size + mod time</div>
+            <div class="text-center text-gray-400">-></div>
+            <div class="bg-white rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold">4.</span> Tokenize, label, and optional snippet extraction</div>
+            <div class="text-center text-gray-400">-></div>
+            <div class="bg-white rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold">5.</span> Save <code>files.json</code> and rebuild <code>inverted.json</code></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-gray-200 p-5 bg-[#f8f4ee]">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-4">Query Pipeline</h3>
+          <div class="space-y-3 text-sm text-gray-700">
+            <div class="bg-white rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold">1.</span> Accept query and normalize limit</div>
+            <div class="text-center text-gray-400">-></div>
+            <div class="bg-white rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold">2.</span> Tokenize query and fetch candidate file IDs</div>
+            <div class="text-center text-gray-400">-></div>
+            <div class="bg-white rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold">3.</span> Compute weighted score per candidate</div>
+            <div class="text-center text-gray-400">-></div>
+            <div class="bg-white rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold">4.</span> Sort by score, then by recency for ties</div>
+            <div class="text-center text-gray-400">-></div>
+            <div class="bg-white rounded-lg border border-gray-200 px-4 py-3"><span class="font-semibold">5.</span> Return top results with why-matched info</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div>
+          <a href="/liyuanda/" class="inline-block text-3xl font-medium mb-4">YD</a>
+          <p class="text-gray-400 text-sm leading-relaxed">Yuanda Li - A Grade 8 student passionate about technology, arts, and sports.</p>
+        </div>
+        <div>
+          <h3 class="text-xs font-medium uppercase tracking-[0.15em] text-gray-500 mb-5">Navigation</h3>
+          <ul class="space-y-3">
+            <li><a href="/liyuanda/" class="text-gray-300 hover:text-white transition-colors text-sm">Home</a></li>
+            <li><a href="/liyuanda/about-detail.html" class="text-gray-300 hover:text-white transition-colors text-sm">About</a></li>
+            <li><a href="/liyuanda/projects.html" class="text-gray-300 hover:text-white transition-colors text-sm">Projects</a></li>
+            <li><a href="/liyuanda/blog.html" class="text-gray-300 hover:text-white transition-colors text-sm">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs font-medium uppercase tracking-[0.15em] text-gray-500 mb-5">Contact</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="mailto:lydbest@outlook.com" class="text-gray-300 hover:text-white transition-colors text-sm inline-flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                lydbest@outlook.com
+              </a>
+            </li>
+            <li>
+              <span class="text-gray-300 text-sm inline-flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                WeChat: Meinianda_Li
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/10 text-center">
+        <p class="text-gray-500 text-sm">© 2026 Yuanda Li. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
