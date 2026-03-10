@@ -141,12 +141,12 @@ export const config = {
         },
         {
           heading: 'Athletic Pursuits',
-          text: 'For four years, I have maintained consistent training in squash and badminton. Badminton has improved my reaction speed and teamwork, while squash has strengthened my instant judgment and stress resistance.',
+          text: 'For four years, I have maintained consistent training in squash and badminton.',
           image: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&h=400&fit=crop',
         },
         {
           heading: 'Academic Exploration', 
-          text: 'I enjoy self-directed learning. I studied AMC10 independently and achieved a score of 64.5 in 2025. When facing challenges in robot programming, I actively seek solutions through English literature and AI tools.',
+          text: 'I enjoy self-directed learning. I studied AMC10 independently and achieved a score of 64.5 in 2025. When facing challenges in robot programming, I actively seek solutions through English literature and technical references.',
           image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop',
         },
       ],
