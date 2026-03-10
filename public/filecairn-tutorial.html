@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FileAtlas Tutorial - Yuanda Li</title>
+  <title>FileCairn Tutorial - Yuanda Li</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
@@ -29,12 +29,12 @@
 
   <header class="pt-32 pb-12 px-6">
     <div class="max-w-4xl mx-auto">
-      <a href="/liyuanda/project-fileatlas.html" class="inline-flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors mb-6">
+      <a href="/liyuanda/project-filecairn.html" class="inline-flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors mb-6">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-        Back to FileAtlas Project
+        Back to FileCairn Project
       </a>
-      <h1 class="text-4xl md:text-5xl font-normal text-gray-900 font-serif italic mb-4">FileAtlas Tutorial</h1>
-      <p class="text-xl text-gray-600 leading-relaxed">Step-by-step guide to run, search, and edit the FileAtlas project page.</p>
+      <h1 class="text-4xl md:text-5xl font-normal text-gray-900 font-serif italic mb-4">FileCairn Tutorial</h1>
+      <p class="text-xl text-gray-600 leading-relaxed">Step-by-step guide to run, search, and edit the FileCairn project page.</p>
     </div>
   </header>
 
@@ -43,9 +43,9 @@
       <h2 class="text-2xl font-medium text-gray-900 font-serif italic mb-4">1. Build and Run Locally</h2>
       <p class="text-gray-700 mb-4">Open Terminal and run:</p>
       <div class="bg-gray-900 rounded-xl p-5 overflow-x-auto">
-        <pre class="text-sm text-gray-300 font-mono"><code>cd /Users/kevin/fileatlas
-go build -o ./bin/fileatlas ./cmd/fileatlas
-./bin/fileatlas init</code></pre>
+        <pre class="text-sm text-gray-300 font-mono"><code>cd /Users/kevin/filecairn
+go build -o ./bin/filecairn ./cmd/filecairn
+./bin/filecairn init</code></pre>
       </div>
     </article>
 
@@ -53,9 +53,9 @@ go build -o ./bin/fileatlas ./cmd/fileatlas
       <h2 class="text-2xl font-medium text-gray-900 font-serif italic mb-4">2. Scan and Search</h2>
       <p class="text-gray-700 mb-4">After setup, scan files and query by keywords:</p>
       <div class="bg-gray-900 rounded-xl p-5 overflow-x-auto mb-4">
-        <pre class="text-sm text-gray-300 font-mono"><code>./bin/fileatlas scan --all
-./bin/fileatlas find "toefl test"
-./bin/fileatlas status</code></pre>
+        <pre class="text-sm text-gray-300 font-mono"><code>./bin/filecairn scan --all
+./bin/filecairn find "toefl test"
+./bin/filecairn status</code></pre>
       </div>
       <p class="text-sm text-gray-600">Tip: use specific query phrases like <code>toefl reading test 1</code> for cleaner results.</p>
     </article>
@@ -64,41 +64,32 @@ go build -o ./bin/fileatlas ./cmd/fileatlas
       <h2 class="text-2xl font-medium text-gray-900 font-serif italic mb-4">3. Use API Mode</h2>
       <p class="text-gray-700 mb-4">Start API service for tool integration:</p>
       <div class="bg-gray-900 rounded-xl p-5 overflow-x-auto">
-        <pre class="text-sm text-gray-300 font-mono"><code>./bin/fileatlas serve --addr 127.0.0.1:4819
+        <pre class="text-sm text-gray-300 font-mono"><code>./bin/filecairn serve --addr 127.0.0.1:4819
 curl -sS http://127.0.0.1:4819/v1/health
-curl -sS http://127.0.0.1:4819/v1/find -H 'Content-Type: application/json' -d '{"query":"fileatlas","limit":5}'</code></pre>
+curl -sS http://127.0.0.1:4819/v1/find -H 'Content-Type: application/json' -d '{"query":"filecairn","limit":5}'</code></pre>
       </div>
     </article>
 
     <article class="bg-white rounded-2xl p-6 shadow-sm">
-      <h2 class="text-2xl font-medium text-gray-900 font-serif italic mb-4">4. Register Agent-Created Files</h2>
+      <h2 class="text-2xl font-medium text-gray-900 font-serif italic mb-4">4. Install Skills</h2>
+      <p class="text-gray-700 mb-4">After API mode is running, install skill files so tools can call FileCairn directly:</p>
+      <p class="text-sm text-gray-600 mb-2">Install skill files:</p>
+      <div class="bg-gray-900 rounded-xl p-5 overflow-x-auto mb-4">
+        <pre class="text-sm text-gray-300 font-mono"><code>mkdir -p "$HOME/.filecairn/skills"
+cp /Users/kevin/filecairn/skills/*.md "$HOME/.filecairn/skills/"</code></pre>
+      </div>
+    </article>
+
+    <article class="bg-white rounded-2xl p-6 shadow-sm">
+      <h2 class="text-2xl font-medium text-gray-900 font-serif italic mb-4">5. Register Created Files</h2>
       <p class="text-gray-700 mb-4">When a tool writes a file, register it immediately:</p>
       <div class="bg-gray-900 rounded-xl p-5 overflow-x-auto">
         <pre class="text-sm text-gray-300 font-mono"><code>echo "new note" > /tmp/new-note.md
-./bin/fileatlas register-created --path /tmp/new-note.md --agent openclaw --share full
-./bin/fileatlas find "new note"</code></pre>
+./bin/filecairn register-created --path /tmp/new-note.md --agent openclaw --share full
+./bin/filecairn find "new note"</code></pre>
       </div>
     </article>
 
-    <article class="bg-white rounded-2xl p-6 shadow-sm">
-      <h2 class="text-2xl font-medium text-gray-900 font-serif italic mb-4">5. Edit Your Website Project Page</h2>
-      <ol class="list-decimal pl-6 space-y-2 text-gray-700">
-        <li>Edit this file: <code>/Users/kevin/Documents/GitHub/liyuanda/public/project-fileatlas.html</code></li>
-        <li>Refresh browser page: <code>/liyuanda/project-fileatlas.html</code></li>
-        <li>If updates do not appear, do hard refresh: <code>Cmd + Shift + R</code></li>
-      </ol>
-    </article>
-
-    <article class="bg-white rounded-2xl p-6 shadow-sm">
-      <h2 class="text-2xl font-medium text-gray-900 font-serif italic mb-4">6. Save to Git</h2>
-      <p class="text-gray-700 mb-4">Save your website changes:</p>
-      <div class="bg-gray-900 rounded-xl p-5 overflow-x-auto">
-        <pre class="text-sm text-gray-300 font-mono"><code>cd /Users/kevin/Documents/GitHub/liyuanda
-git add public/project-fileatlas.html public/fileatlas-tutorial.html public/data/projects.js
-git commit -m "Add FileAtlas page and tutorial"
-git push origin main</code></pre>
-      </div>
-    </article>
   </section>
 
   <footer class="bg-gray-900 text-white py-16">
