@@ -80,8 +80,8 @@ export const homepageConfig = {
   // Quote Section
   // ============================================
   quote: {
-    text: 'I want to create technology that empowers humanity, that deepens our understanding of the world, and that strengthens our connections to each other.',
-    author: 'Yuanda Li'
+    text: 'In the depths of uncertainty, the quest for meaning becomes the compass guiding the journey of existence.',
+    author: ''
   }
 };
 
