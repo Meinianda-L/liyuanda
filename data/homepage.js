@@ -33,7 +33,7 @@ export const homepageConfig = {
   // These images cycle when scrolling
   // ============================================
   // Order requested: fun1 -> music1 -> vex2 -> fun
-  // Note: available files are vex2.jpg and fun.jpg in /public/images
+  // Use optimized web versions for faster loading on GitHub Pages.
   aboutImages: [
     {
       id: 1,
@@ -42,12 +42,12 @@ export const homepageConfig = {
     },
     {
       id: 2,
-      src: 'images/music1.png',
+      src: 'images/music1-web.jpg',
       alt: 'Music'
     },
     {
       id: 3,
-      src: 'images/vex2.jpg',
+      src: 'images/vex2-web.jpg',
       alt: 'VEX 2'
     },
     {
