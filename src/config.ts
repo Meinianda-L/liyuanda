@@ -91,7 +91,7 @@ export const config = {
   hero: {
     greeting: "Hi, I'm",
     name: 'Yuanda Li',
-    subtitle: 'A passionate innovator exploring robotics, music, and technology',
+    subtitle: 'A Grade 8 builder creating practical tools, robotics systems, and FileCairn.',
     // Gradient colors for background
     gradient: {
       colors: ['#f4d0c4', '#e8b8a8', '#d4a08c', '#c99480', '#f4d0c4'],
