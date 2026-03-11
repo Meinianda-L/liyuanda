@@ -15,7 +15,7 @@ export const homepageConfig = {
     name: 'Yuanda Li',
     
     // Subtitle/description
-    subtitle: 'A passionate innovator exploring robotics, music, and technology',
+    subtitle: 'A Grade 8 builder creating practical tools, robotics systems, and FileCairn.',
     
     // Background gradient colors
     gradientColors: ['#f4d0c4', '#e8b8a8', '#d4a08c', '#c99480'],
