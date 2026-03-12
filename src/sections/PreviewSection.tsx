@@ -101,13 +101,6 @@ const PreviewSection = ({ type, title, subtitle, items, viewAllLink, viewAllText
                 }`}
                 style={{ transitionDelay: `${200 + index * 100}ms` }}
               >
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
                 <div className="p-5">
                   <h3 className="text-lg font-medium text-gray-900 group-hover:opacity-80 transition-opacity">
                     {item.title}
