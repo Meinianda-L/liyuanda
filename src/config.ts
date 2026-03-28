@@ -30,8 +30,8 @@ export const config = {
       href: '/about',
     },
     images: [
-      { src: '/images/vex_about.jpg', alt: 'Robotics' },
-      { src: '/images/fun1.jpg', alt: 'Sports' },
+      { src: `${import.meta.env.BASE_URL}images/vex_about.jpg`, alt: 'Robotics' },
+      { src: `${import.meta.env.BASE_URL}images/fun1.jpg`, alt: 'Sports' },
     ],
   },
 
@@ -43,14 +43,14 @@ export const config = {
         tag: 'Since Grade 4',
         title: 'Robotics Passion',
         text: 'Since Grade 4, I have dedicated over 7-8 hours weekly to VEX robotics. I have won multiple national competitions and developed strong skills in mechanical design and programming. I self-taught advanced mathematics to overcome programming challenges and developed efficient control systems.',
-        image: '/images/vex_about.jpg',
+        image: `${import.meta.env.BASE_URL}images/vex_about.jpg`,
         fallbackImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop',
       },
       {
         tag: 'Level 10',
         title: 'Musical Excellence',
         text: 'I joined the Fuxue Hutong Primary School Golden Sail Marching Band in Grade 4, rising from an ordinary member to principal clarinetist. I have passed the Level 10 certification from the China Conservatory of Music.',
-        image: '/images/music1.png',
+        image: `${import.meta.env.BASE_URL}images/music1.png`,
         fallbackImage: 'https://images.unsplash.com/photo-1514117445516-2ecfc9c4ec90?w=600&h=400&fit=crop',
       },
     ],
