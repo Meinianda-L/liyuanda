@@ -57,7 +57,7 @@ svg {
 
 .card-hover:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
 }
 
 .journey-card {
@@ -66,7 +66,7 @@ svg {
 
 .journey-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .journey-image {
@@ -77,11 +77,56 @@ svg {
   transform: scale(1.05);
 }
 
+@keyframes hero-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-anim {
+  background-size: 200% 200%;
+  animation: hero-shift 16s ease infinite;
+}
+
+.spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.6;
+}
+
+.hero-bridge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -60px;
+  height: 220px;
+  background: radial-gradient(120% 120% at 50% 0%, rgba(255, 255, 255, 0.95) 0%, rgba(244, 221, 205, 0.75) 42%, rgba(250, 246, 240, 1) 74%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hero-light {
+  position: absolute;
+  inset: -22% 0 auto 0;
+  height: 70vh;
+  background: radial-gradient(120% 120% at 50% 10%, rgba(255, 245, 235, 0.7) 0%, rgba(232, 200, 180, 0.22) 40%, rgba(255, 255, 255, 0) 72%);
+  opacity: 0.85;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
 
 .section-icon {
   width: 52px;
   height: 52px;
-  color: #2563eb;
+  color: #7d5a50;
   display: inline-flex;
   align-items: center;
   justify-content: center;

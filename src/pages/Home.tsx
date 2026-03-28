@@ -12,10 +12,10 @@ const Home = () => {
       <Hero />
       <About />
 
-      <section id="projects" className="min-h-screen flex items-center bg-[#f0f7ff] py-20">
+      <section id="projects" className="min-h-screen flex items-center bg-[#f7f1ea] py-20">
         <div className="max-w-5xl mx-auto px-6 w-full text-center">
           <Reveal>
-            <p className="text-xs tracking-[0.2em] uppercase text-blue-400 mb-5">Projects</p>
+            <p className="text-xs tracking-[0.2em] uppercase text-gray-500 mb-5">Projects</p>
           </Reveal>
           <Reveal delayMs={50}>
             <div className="flex justify-center mb-4">
@@ -53,10 +53,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="blog" className="min-h-screen flex items-center bg-[#edf4ff] py-20">
+      <section id="blog" className="min-h-screen flex items-center bg-[#f6efe7] py-20">
         <div className="max-w-5xl mx-auto px-6 w-full text-center">
           <Reveal>
-            <p className="text-xs tracking-[0.2em] uppercase text-blue-400 mb-5">Blog</p>
+            <p className="text-xs tracking-[0.2em] uppercase text-gray-500 mb-5">Blog</p>
           </Reveal>
           <Reveal delayMs={50}>
             <div className="flex justify-center mb-4">
@@ -96,7 +96,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="min-h-screen flex items-center bg-white py-20">
+      <section className="min-h-screen flex items-center bg-[#f5f0e8] py-20">
         <div className="max-w-4xl mx-auto px-6 text-center w-full">
           <Reveal>
             <p

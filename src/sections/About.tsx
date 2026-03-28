@@ -6,11 +6,11 @@ const About = () => {
   const [firstImage, secondImage] = about.images;
 
   return (
-    <section id="about" className="bg-white py-20 min-h-screen flex items-center">
+    <section id="about" className="bg-[#faf6f0] py-20 min-h-screen flex items-center">
       <div className="max-w-6xl mx-auto px-6 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="block text-xs tracking-[0.2em] uppercase text-blue-400 mb-6">
+            <span className="block text-xs tracking-[0.2em] uppercase text-gray-500 mb-6">
               {about.sectionTitle}
             </span>
             <h2

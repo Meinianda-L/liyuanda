@@ -5,7 +5,7 @@ const Footer = () => {
   const { personal, footer } = config;
 
   return (
-    <footer id="contact" className="bg-[#070c1c] text-white py-16">
+    <footer id="contact" className="bg-gray-900 text-white py-16">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
           <Reveal>

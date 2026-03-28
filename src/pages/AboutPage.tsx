@@ -6,7 +6,7 @@ const AboutPage = () => {
   const { aboutPage, theme } = config;
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-[#faf6f0] min-h-screen">
       <header className="pt-32 pb-16 px-6">
         <div className="max-w-6xl mx-auto">
           <Link
@@ -93,7 +93,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-[#f0f7ff]">
+      <section className="py-16 px-6 bg-[#f5f0e8]">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4 mb-16">
             <div

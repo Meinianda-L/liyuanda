@@ -119,7 +119,7 @@ export const config = {
   },
 
   theme: {
-    primaryColor: '#2563eb',
+    primaryColor: '#c9a88c',
     fontFamily: {
       heading: "'Playfair Display', Georgia, serif",
       body: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
